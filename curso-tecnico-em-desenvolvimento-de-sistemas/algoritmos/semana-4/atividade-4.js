@@ -5,11 +5,11 @@ let rs = require("readline-sync");
 
 // ---------------------- Resposta ----------------------
 
-let numero = rs.questionInt("Digite um número: ");
 let contador = 0;
 
-while (numero > 0) {
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while
+do {
   contador++;
   numero = rs.questionInt("Digite um número: ");
-}
+} while (numero > 0);
 console.log("O número total de tentativas foi: " + contador);

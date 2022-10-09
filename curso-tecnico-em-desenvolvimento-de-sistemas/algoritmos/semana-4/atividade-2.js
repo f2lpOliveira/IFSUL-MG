@@ -8,14 +8,19 @@ let rs = require("readline-sync");
 // ---------------------- Resposta ----------------------
 
 let clientesCadastrados = 5;
+let valorLimite = 1000;
+let percentualMinimo = 0.1;
+let percentualMaximo = 0.15;
 
 for (i = 1; i <= clientesCadastrados; i++) {
   let codigoDoCliente = rs.questionInt("Digite o código do cliente: ");
   let valorGasto = rs.questionFloat("Informe o total gasto no ano: R$");
 
-  if (valorGasto <= 1000 && valorGasto > 0) {
-    console.log("O cliente receberá um bônus de: R$" + valorGasto * 0.1);
+  if (valorGasto <= valorLimite && valorGasto > 0) {
+    console.log("O cliente receberá um bônus de: R$" + valorGasto * percentualMinimo);
   } else {
-    console.log("O cliente " + codigoDoCliente + " receberá um bônus de: R$" + valorGasto * 0.15);
+    console.log(
+      "O cliente " + codigoDoCliente + " receberá um bônus de: R$" + valorGasto * percentualMaximo
+    );
   }
 }
